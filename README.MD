@@ -95,7 +95,21 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
-## 3. Installing Essential Hacking Tools
+## 3. Installing t00lbox
+
+Run the following commands to install t00lbox on your machine and copy the inital resources.yml file containing the "database" for t00lbox.
+```bash
+sudo apt install go curl
+mkdir ~/.go
+echo "GOPATH=$HOME/.go" >> ~/.bashrc
+echo "export GOPATH" >> ~/.bashrc
+echo "PATH=\$PATH:\$GOPATH/bin # Add GOPATH/bin to PATH for scripting" >> ~/.bashrc
+source ~/.bashrc
+go install github.com/burgr033/t00lbox/cmd/t00lbox
+curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml
+```
+
+## 4. Installing Essential Hacking Tools
 
 With the Kali repositories added, you can now install tools commonly used in CTFs.
 
@@ -120,7 +134,7 @@ sudo apt install -y nmap openvpn gobuster john seclists
 
 ---
 
-## 4. Setting Up OpenVPN for Hack The Box or TryHackMe
+## 5. Setting Up OpenVPN for Hack The Box or TryHackMe
 
 Both Hack The Box and TryHackMe use OpenVPN to provide access to their CTF networks. Here’s how to set it up.
 
@@ -156,7 +170,7 @@ This will start the OpenVPN client, and you should see a successful connection m
 
 ---
 
-## 5. Useful Tips
+## 6. Useful Tips
 
 ### Taking Snapshots
 
