@@ -1,20 +1,20 @@
-This guide will walk you through setting up a Debian VM in VirtualBox and configuring it with Kali Linux tools to create a safe, isolated environment for practicing CTF hacking challenges.
+This guide will walk you through setting up a Kali VM in VirtualBox and configuring it with tools to create a safe, isolated environment for practicing CTF hacking challenges.
 
 ---
 
 ## Prerequisites
 
 - **VirtualBox**: [Download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads) for your system (Windows, MacOS, or Linux).
-- **Debian ISO**: [Download the latest Debian ISO](https://www.debian.org/distrib/) for a clean Debian installation.
+- **Kali ISO**: [Download the latest Debian ISO](https://www.kali.org/get-kali/#kali-installer-images) for a clean Kali installation.
 
 ---
 
-## 1. Setting Up the VirtualBox VM with Debian
+## 1. Setting Up the VirtualBox VM with Kali
 
 ### Step 1: Create a New Virtual Machine
 
 1. Open VirtualBox and click **New**.
-2. Enter a **Name** for your VM (e.g., "DebianCTF").
+2. Enter a **Name** for your VM (e.g., "KaliCTF").
 3. Choose **Linux** as the Type and **Debian (64-bit)** as the Version.
 4. Click **Next**.
 
@@ -23,80 +23,36 @@ This guide will walk you through setting up a Debian VM in VirtualBox and config
 1. **Memory (RAM)**: Allocate at least **2 GB (2048 MB)** for better performance.
 2. **Hard Disk**: Choose **Create a virtual hard disk now** and click **Create**.
 3. Select **VDI (VirtualBox Disk Image)** as the file type and **Dynamically allocated** for storage.
-4. Choose a disk size (20 GB is recommended) and click **Create**.
+4. Choose a disk size (at least 20 GB is recommended) and click **Create**.
 
-### Step 3: Load the Debian ISO
+### Step 3: Load the Kali ISO
 
 1. With the VM selected, go to **Settings > Storage**.
 2. Click on the **Empty** disk under **Controller: IDE** and select the **DVD icon** on the right.
-3. Choose **Choose a disk file** and select the Debian ISO you downloaded.
+3. Choose **Choose a disk file** and select the Kali ISO you downloaded.
 
 ### Step 4: Start the VM and Install Debian
 
 1. Start the VM by selecting it and clicking **Start**.
 2. Choose **Graphical Install** and follow the setup prompts:
    - Select your **language**, **location**, and **keyboard** layout.
-   - Set up a **root password** and create a regular user account.
-   - Choose **Guided – Use Entire Disk** for partitioning.
-   - If you get asked for a desktop environment, I would recommend selecting **XFCE**. It is lightweight and easy to use.
+   - Set up a **host name** for your device (this does not matter, choose a cool name)
+   - **Domain name** can be left empty.
+   - Set up your **user** with a password
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - Set up a **root password** and create a regular user account.
+   - Choose **Guided – Use Entire Disk** and **all files in one partition**for partitioning.
+   - Acknowledge everything with "Write changes to disk?" **Yes**
+   - Now the install process should begin. During the installation:
+      - If you get asked for a proxy, just **continue**.
+      - If you get asked for a desktop environment, I would recommend selecting **XFCE**. It is lightweight and easy to use.
+      - If you get asked What tools you want to install, I would recommend **deselecting everything** as we will configure a basic system.
 3. Let the installation complete and remove the ISO when prompted to restart.
 
-After rebooting, log in with your user credentials to access your new Debian environment.
+After rebooting, log in with your user credentials to access your new Kali environment.
 
 ---
 
-## 2. Configuring Kali Linux Repositories on Debian
-
-By adding the Kali Linux repositories to Debian, you can access Kali’s penetration testing tools directly from Debian.
-
-### Step 1: Add Kali Repositories
-
-1. Open a terminal.
-2. Edit the sources list by typing:
-
-   ```bash
-   sudo nano /etc/apt/sources.list
-   ```
-- **`sudo`**: Runs the command with superuser privileges.
-- **`nano`**: Opens the Nano text editor.
-- **`/etc/apt/sources.list`**: This file contains a list of repositories used by `apt` to download packages. Adding the Kali repositories here allows us to install Kali tools on Debian.
-
-
-
-3. Add the following Kali repositories to the bottom of the file:
-
-   ```plaintext
-   deb http://http.kali.org/kali kali-rolling main non-free contrib
-   ```
-
-4. Save the file (`Ctrl + O` to write out, `Enter` to confirm, and `Ctrl + X` to exit).
-
-### Step 2: Import Kali’s Package Keys
-
-To ensure packages from the Kali repositories are trusted, add Kali’s public key:
-
-```bash
-wget -q -O - https://archive.kali.org/archive-key.asc | sudo apt-key add -
-```
-- **`wget -q -O - <URL>`**: Downloads the Kali repository key and outputs it to standard output (`-O -`).
-- **`sudo apt-key add -`**: Adds the downloaded key to the list of trusted keys, which lets Debian verify that the packages from Kali are authentic.
-
-
-### Step 3: Update and Upgrade
-
-Run the following commands to refresh the package list and update any available packages:
-
-```bash
-sudo apt update && sudo apt upgrade -y
-```
-
-- **`sudo apt update`**: Refreshes the list of available packages from the configured repositories.
-- **`&&`**: Executes the next command only if the previous one succeeds.
-- **`sudo apt upgrade -y`**: Installs the latest versions of all installed packages. `-y` automatically confirms the upgrade.
-
----
-
-## 3. Installing t00lbox
+## 2. Installing t00lbox
 
 Run the following commands to install t00lbox on your machine and copy the inital resources.yml file containing the "database" for t00lbox.
 ```bash
@@ -120,7 +76,7 @@ curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resource
 
 
 
-## 4. Installing Essential Hacking Tools
+## 3. Installing Essential Hacking Tools
 
 With the Kali repositories added, you can now install tools commonly used in CTFs.
 
@@ -145,7 +101,7 @@ sudo apt install -y nmap openvpn gobuster john seclists
 
 ---
 
-## 5. Setting Up OpenVPN for Hack The Box or TryHackMe
+## 4. Setting Up OpenVPN for Hack The Box or TryHackMe
 
 Both Hack The Box and TryHackMe use OpenVPN to provide access to their CTF networks. Here’s how to set it up.
 
@@ -181,7 +137,11 @@ This will start the OpenVPN client, and you should see a successful connection m
 
 ---
 
-## 6. Useful Tips
+## 5. Useful Tips
+
+### Familiarize yourself with your system
+
+If you finished the installation, you should start exploring your system and terminal settings and the applications installed on the system.
 
 ### Taking Snapshots
 
