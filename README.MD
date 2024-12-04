@@ -39,7 +39,6 @@ This guide will walk you through setting up a Kali VM in VirtualBox and configur
    - Set up a **host name** for your device (this does not matter, choose a cool name)
    - **Domain name** can be left empty.
    - Set up your **user** with a password
-   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! - Set up a **root password** and create a regular user account.
    - Choose **Guided – Use Entire Disk** and **all files in one partition**for partitioning.
    - Acknowledge everything with "Write changes to disk?" **Yes**
    - Now the install process should begin. During the installation:
