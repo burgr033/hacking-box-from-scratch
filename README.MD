@@ -61,7 +61,7 @@ echo "GOPATH=$HOME/.go" >> ~/.zshrc
 echo "export GOPATH" >> ~/.zshrc
 echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
 source ~/.zshrc
-go install github.com/burgr033/t00lbox/cmd/t00lbox
+go install github.com/burgr033/t00lbox/cmd/t00lbox@latest
 curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml
 ```
 
@@ -70,7 +70,7 @@ curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resource
 - **`echo "GOPATH=$HOME/.go" >> ~/.zshrc`**: Your shell is ZSH. This commands adds the line `GOPATH=$HOME/.go` into your ZSH configuration file.
 - **`echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc`**: This tells your shell ZSH to look in the path to look for binaries, so you don't have to type out the whole path to the binary everytime you want to launch t00lbox.
 - **`source ~/.zshrc`**: Reloads your ZSH configuration file for the current session.
-- **`go install github.com/burgr033/t00lbox/cmd/t00lbox`**: installs t00lbox
+- **`go install github.com/burgr033/t00lbox/cmd/t00lbox@latest`**: installs t00lbox
 - **`curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml`**: downloads the inital database into the specific directory.
 
 
