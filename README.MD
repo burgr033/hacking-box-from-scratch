@@ -57,19 +57,19 @@ Run the following commands to install t00lbox on your machine and copy the inita
 ```bash
 sudo apt install go curl
 mkdir ~/.go
-echo "GOPATH=$HOME/.go" >> ~/.bashrc
-echo "export GOPATH" >> ~/.bashrc
-echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.bashrc
-source ~/.bashrc
+echo "GOPATH=$HOME/.go" >> ~/.zshrc
+echo "export GOPATH" >> ~/.zshrc
+echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc
+source ~/.zshrc
 go install github.com/burgr033/t00lbox/cmd/t00lbox
 curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml
 ```
 
 - **`sudo apt install go curl`**: Installs curl and go. Go is a dependency for t00lbox and curl is needed to download the initial database.
 - **`mkdir ~/.go`**: Create directory for t00lbox to get installed into
-- **`echo "GOPATH=$HOME/.go" >> ~/.bashrc`**: Your shell is Bash. This commands adds the line `GOPATH=$HOME/.go` into your Bash configuration file.
-- **`echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.bashrc`**: This tells your shell bash to look in the path to look for binaries, so you don't have to type out the whole path to the binary everytime you want to launch t00lbox.
-- **`source ~/.bashrc`**: Reloads your Bash configuration file for the current session.
+- **`echo "GOPATH=$HOME/.go" >> ~/.zshrc`**: Your shell is ZSH. This commands adds the line `GOPATH=$HOME/.go` into your ZSH configuration file.
+- **`echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc`**: This tells your shell ZSH to look in the path to look for binaries, so you don't have to type out the whole path to the binary everytime you want to launch t00lbox.
+- **`source ~/.zshrc`**: Reloads your ZSH configuration file for the current session.
 - **`go install github.com/burgr033/t00lbox/cmd/t00lbox`**: installs t00lbox
 - **`curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml`**: downloads the inital database into the specific directory.
 
