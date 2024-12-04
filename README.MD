@@ -38,6 +38,7 @@ This guide will walk you through setting up a Debian VM in VirtualBox and config
    - Select your **language**, **location**, and **keyboard** layout.
    - Set up a **root password** and create a regular user account.
    - Choose **Guided – Use Entire Disk** for partitioning.
+   - If you get asked for a desktop environment, I would recommend selecting **XFCE**. It is lightweight and easy to use.
 3. Let the installation complete and remove the ISO when prompted to restart.
 
 After rebooting, log in with your user credentials to access your new Debian environment.
