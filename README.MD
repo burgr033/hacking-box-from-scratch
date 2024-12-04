@@ -5,7 +5,7 @@ This guide will walk you through setting up a Kali VM in VirtualBox and configur
 ## Prerequisites
 
 - **VirtualBox**: [Download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads) for your system (Windows, MacOS, or Linux).
-- **Kali ISO**: [Download the latest Debian ISO](https://www.kali.org/get-kali/#kali-installer-images) for a clean Kali installation.
+- **Kali ISO**: [Download the latest Kali ISO](https://www.kali.org/get-kali/#kali-installer-images) for a clean Kali installation.
 
 ---
 
@@ -153,9 +153,9 @@ After setting up your VM, **take a snapshot**. This way, you can restore the VM 
 - **NAT (Network Address Translation)** is typically selected by default and provides internet access to your VM while keeping it more secure.
 - **Bridged Adapter**: Allows the VM to act as a separate device on your network, which can be useful for certain network tasks, like scanning other devices on your local network.
 
-### Keeping Debian Updated
+### Keeping Kali Updated
 
-Periodically, update your Debian system and installed tools to have the latest security patches and features:
+Periodically, update your Kali system and installed tools to have the latest security patches and features:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -165,4 +165,4 @@ sudo apt update && sudo apt upgrade -y
 
 ## Conclusion
 
-You now have a Debian VM set up in VirtualBox with essential Kali Linux tools, ready to participate in CTF challenges. With this environment, you can explore platforms like Hack The Box and TryHackMe safely, practicing your penetration testing skills in an isolated and secure setup.
+You now have a Kali VM set up in VirtualBox with essential hacking tools, ready to participate in CTF challenges. With this environment, you can explore platforms like Hack The Box and TryHackMe safely, practicing your penetration testing skills in an isolated and secure setup.
