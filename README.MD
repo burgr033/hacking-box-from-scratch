@@ -55,7 +55,7 @@ After rebooting, log in with your user credentials to access your new Kali envir
 
 Run the following commands to install t00lbox on your machine and copy the inital resources.yml file containing the "database" for t00lbox.
 ```bash
-sudo apt install go curl
+sudo apt install golang curl
 mkdir ~/.go
 echo "GOPATH=$HOME/.go" >> ~/.zshrc
 echo "export GOPATH" >> ~/.zshrc
@@ -65,7 +65,7 @@ go install github.com/burgr033/t00lbox/cmd/t00lbox
 curl https://raw.githubusercontent.com/burgr033/t00lbox/refs/heads/main/resources.yml --create-dirs --output ~/.config/t00lbox/resources.yml
 ```
 
-- **`sudo apt install go curl`**: Installs curl and go. Go is a dependency for t00lbox and curl is needed to download the initial database.
+- **`sudo apt install golang curl`**: Installs curl and go. Go is a dependency for t00lbox and curl is needed to download the initial database.
 - **`mkdir ~/.go`**: Create directory for t00lbox to get installed into
 - **`echo "GOPATH=$HOME/.go" >> ~/.zshrc`**: Your shell is ZSH. This commands adds the line `GOPATH=$HOME/.go` into your ZSH configuration file.
 - **`echo "PATH=\$PATH:\$GOPATH/bin" >> ~/.zshrc`**: This tells your shell ZSH to look in the path to look for binaries, so you don't have to type out the whole path to the binary everytime you want to launch t00lbox.
